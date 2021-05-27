@@ -1,0 +1,23 @@
+/* css del main */
+
+.contenedor-main{
+    background-image: url(../../imagen-main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor-main h1{
+    width: 35%;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color:#f4fafd;
+  }
+  .contenedor-main h1,button{
+    margin-bottom: 1%;
+  
+  }
