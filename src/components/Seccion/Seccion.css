@@ -1,0 +1,15 @@
+.contenedor-seccion{
+    padding: 0.5rem;
+}
+.contenedor-seccion h2{
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.contenedor-productos{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}

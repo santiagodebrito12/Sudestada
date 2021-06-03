@@ -1,7 +1,6 @@
-/* css del main */
 
 .contenedor-main{
-    background-image: url(../../imagen-main.jpg);
+    background-image: url(../../img/imagen-main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
