@@ -1,12 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
+import carrito from '../../img/carrito.png';
 
-const CartWidget = () => {
+import './CartWidget.css';
+
+const CartWidget = ({total}) => {
+ 
     return (
-        <>
-       <li><a href="#" className="enlances-nav"><i class="fas fa-shopping-cart"></i></a></li>
-       
-        </>
+      <>
+      <li><a className="enlances-nav"><img src={carrito}/><span className="items">{total}</span></a></li>
+      </>
+        
       );
 }
  
-export default CartWidget;
+export default CartWidget

@@ -5,3 +5,16 @@ body{
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
+.error {
+  width: 50%;
+  min-height: 50px;
+  text-align: center;
+  align-content: center;
+  margin: -80px auto;
+  font-size: 2rem;
+}
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}

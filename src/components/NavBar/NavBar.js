@@ -2,7 +2,7 @@ import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({total}) => {
     
     return (
        <header className="contenedor-header">
@@ -17,7 +17,9 @@ const NavBar = () => {
                <li><a className="enlances-nav"  href="#surf" >Surf</a></li>
                <li><a className="enlances-nav"  href="#windsurf">Windsurf</a></li> 
                <li><a className="enlances-nav"  href="#contacto">Contacto</a></li> 
-               <CartWidget/> 
+               <CartWidget
+               total={total}
+               /> 
                 
   
            </ul>

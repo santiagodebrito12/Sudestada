@@ -1,4 +1,5 @@
 .contenedor-seccion{
+
     padding: 0.5rem;
 }
 .contenedor-seccion h2{
@@ -8,8 +9,9 @@
 }
 
 .contenedor-productos{
-    padding: 1rem;
-    width: 100%;
+    padding: 2rem;
+    margin: 10px auto;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
 }
