@@ -3,11 +3,16 @@ import Card from '../Card/Card';
 import './Seccion.css';
 
 import kite from '../../img/imagen-kite.jpg';
-import kite2 from '../../img/kite2.jpg'
 
 
-const ItemListContainer = ({greeting,setCantidad,items,setItems,total}) => {
+
+const ItemListContainer = ({greeting}) => {
     
+    const[cantidad,setCantidad]=useState(0);
+    const[cantidadSeleccionada,setCantidadSeleccionada]=useState();
+    const stock = 6;
+ 
+
     return (
         <>
         <div className="contenedor-seccion ">
@@ -17,60 +22,17 @@ const ItemListContainer = ({greeting,setCantidad,items,setItems,total}) => {
             
             <Card 
             kite={kite}
-            nombre='Cabrinha Switchblade 12 mts'
+            cantidad={cantidad}
             setCantidad={setCantidad}
-            items={items}
-            setItems={setItems}
-            total={total}
+            cantidadSeleccionada={cantidadSeleccionada}
+            setCantidadSeleccionada={setCantidadSeleccionada}
             />
-
-
-            <Card
-            kite={kite2}
-            nombre="Naish 9mts"
-            setCantidad={setCantidad}
-            items={items}
-            setItems={setItems}
-            total={total}
-            />
-
-            <Card
-            kite={kite}
-            nombre='Cabrinha Switchblade 12 mts'
-            setCantidad={setCantidad}
-            items={items}
-            setItems={setItems}
-            total={total}
-
-            />
-            <Card
-            
-             kite={kite2}
-             nombre="Naish 9mts"
-             setCantidad={setCantidad}
-             items={items}
-             setItems={setItems}
-             total={total}
-
-            />
-            <Card
-            kite={kite2}
-            nombre="Naish 9mts"
-            setCantidad={setCantidad}
-            items={items}
-            setItems={setItems}
-             total={total}
-           />
-            <Card 
-            kite={kite}
-            nombre='Cabrinha Switchblade 12 mts'
-            setCantidad={setCantidad}
-            items={items}
-            setItems={setItems}
-            total={total}
-            />
-
+     
         </div>
+        <div className="contenedor-carrito">
+            <h2>Carrito</h2>
+            <p className="parrafo-carrito">Cantidad seleccionada : {cantidadSeleccionada} </p>
+           </div>
         </div>
         </>
       );

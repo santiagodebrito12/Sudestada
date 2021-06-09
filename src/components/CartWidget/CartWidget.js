@@ -3,11 +3,11 @@ import carrito from '../../img/carrito.png';
 
 import './CartWidget.css';
 
-const CartWidget = ({total}) => {
+const CartWidget = () => {
  
     return (
       <>
-      <li><a className="enlances-nav"><img src={carrito}/><span className="items">{total}</span></a></li>
+      <li><a className="enlances-nav"><img src={carrito}/><span className="items">0</span></a></li>
       </>
         
       );

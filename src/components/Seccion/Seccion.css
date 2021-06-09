@@ -15,3 +15,14 @@
     display: flex;
     flex-wrap: wrap;
 }
+.contenedor-carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.parrafo-carrito{
+    width: 350px;
+    height: 60px;
+    background-color: #ddffbc ;
+    text-align: center;
+}
