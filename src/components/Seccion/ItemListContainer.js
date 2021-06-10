@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
-import Card from '../Card/Card';
+import ItemList from '../ItemList/ItemList';
 import './Seccion.css';
 
-import kite from '../../img/imagen-kite.jpg';
+
 
 
 
@@ -18,17 +18,13 @@ const ItemListContainer = ({greeting}) => {
         <div className="contenedor-seccion ">
             <h2>{greeting}</h2>
      
-        <div className="contenedor-productos" id="kitesurf">
-            
-            <Card 
-            kite={kite}
-            cantidad={cantidad}
-            setCantidad={setCantidad}
-            cantidadSeleccionada={cantidadSeleccionada}
-            setCantidadSeleccionada={setCantidadSeleccionada}
-            />
-     
-        </div>
+       <ItemList
+        
+        cantidad={cantidad}
+        setCantidad={setCantidad}
+        cantidadSeleccionada={cantidadSeleccionada}
+        setCantidadSeleccionada={setCantidadSeleccionada}
+       />
         <div className="contenedor-carrito">
             <h2>Carrito</h2>
             <p className="parrafo-carrito">Cantidad seleccionada : {cantidadSeleccionada} </p>

@@ -9,24 +9,14 @@ const ItemCount = ({cantidad,setCantidad}) => {
     return (
         <>
         <div className="contenedor-aumentador">
-
-        {cantidad>0 ?   <button className="button" onClick={()=>{
-             setCantidad(
-                    cantidad - 1,
-                )
-            }}> -1 </button> : <button className="button" disabled="true"> -1 </button> }
+        
+         <button className="button"> -1 </button> 
         
             
          
-            <p>{cantidad}</p>
+            <p>{cantidad=0}</p>
           
-           {(cantidad<stock) ?<button className="button" onClick={()=>{
-            
-            setCantidad(
-                cantidad +1 
-            )
-        }}> +1 </button> : <button className="button" disabled="true">+1</button> } 
-
+           <button className="button"> +1 </button>
         </div>
        
         </>
