@@ -14,6 +14,18 @@ const productos = [
     precio:'3500',
     industria:'brasilera',
     key:3,},
+    {nombre:'Kite Core',
+    precio:3500,
+    industria:'hawaiana',
+    key:4},
+    {nombre:'Kite Cabrinha 12m',
+    precio:1300,
+    industria:'Argentina',
+    key:5},
+    {nombre:'Kite RPM',
+    precio:6500,
+    industria:'Australiana',
+    key:6}
   ]
   
 
@@ -33,7 +45,7 @@ consulta.then((data)=>{
     
     
     return (
-        <div className="container d-flex">
+        <div className="container-fluid d-flex flex-lg-wrap">
             {respuesta.map((producto=>{
                 return(
                     <Card

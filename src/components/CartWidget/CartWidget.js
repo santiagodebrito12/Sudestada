@@ -7,7 +7,7 @@ const CartWidget = () => {
  
     return (
       <>
-      <li><a className="enlances-nav"><img src={carrito}/><span className="items">0</span></a></li>
+      <li><a className="enlances-nav"><img src={carrito}/><span className="items"></span></a></li>
       </>
         
       );

@@ -21,7 +21,7 @@ const Card = ({producto,kite,nombre,cantidadSeleccionada,setCantidadSeleccionada
             <img src={kite} className="card-img-top shadow p-3 mb-5 bg-body rounded"></img>
             <div className="card-body descripcion">
                 <p className="card-title"> {producto.nombre} </p>
-                <p className="card-text">{producto.precio}</p>
+                <p className="card-text">${producto.precio}</p>
                 
                 
                 <ItemCount
