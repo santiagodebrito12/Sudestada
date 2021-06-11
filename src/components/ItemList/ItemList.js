@@ -17,9 +17,9 @@ const productos = [
   ]
   
 
-const ItemList= ({cantidad,setCantidad,cantidadSeleccionada,setCantidadSeleccionada}) => {
+const ItemList= ({cantidadSeleccionada,setCantidadSeleccionada}) => {
+   
     const [respuesta,guardarRespuesta]=useState([]);
-  
     const consulta = new Promise((resolve,reject)=>{
         setTimeout(() => {
             resolve(productos);
@@ -40,8 +40,6 @@ consulta.then((data)=>{
                     key={producto.key}
                     producto={producto}
                     kite={kite}
-                    cantidad={cantidad}
-                    setCantidad={setCantidad}
                     cantidadSeleccionada={cantidadSeleccionada}
                     setCantidadSeleccionada={setCantidadSeleccionada}
                     />

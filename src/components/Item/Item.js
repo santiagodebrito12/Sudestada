@@ -7,9 +7,15 @@ import './Item.css';
 
 
 
-const Card = ({producto,kite,nombre,cantidad,setCantidad,cantidadSeleccionada,setCantidadSeleccionada}) => {
-   
+const Card = ({producto,kite,nombre,cantidadSeleccionada,setCantidadSeleccionada}) => {
+    
+    const[cantidad,setCantidad]=useState(0);
  
+    const handleSubmit = () =>{
+        setCantidadSeleccionada(
+            cantidadSeleccionada += cantidad 
+        )
+    }
     return ( 
             <div className="card" width="18rem">
             <img src={kite} className="card-img-top shadow p-3 mb-5 bg-body rounded"></img>
@@ -19,9 +25,11 @@ const Card = ({producto,kite,nombre,cantidad,setCantidad,cantidadSeleccionada,se
                 
                 
                 <ItemCount
+                cantidad={cantidad}
+                setCantidad={setCantidad}
                 />
 
-               <button className="btn btn-primary">Agregar al carrito</button>
+               <button className="btn btn-primary" onClick={handleSubmit}>Agregar al carrito</button>
                
                
             </div>

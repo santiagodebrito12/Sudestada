@@ -8,8 +8,7 @@ import './Seccion.css';
 
 const ItemListContainer = ({greeting}) => {
     
-    const[cantidad,setCantidad]=useState(0);
-    const[cantidadSeleccionada,setCantidadSeleccionada]=useState();
+    const[cantidadSeleccionada,setCantidadSeleccionada]=useState(0);
     const stock = 6;
  
 
@@ -20,8 +19,7 @@ const ItemListContainer = ({greeting}) => {
      
        <ItemList
         
-        cantidad={cantidad}
-        setCantidad={setCantidad}
+        
         cantidadSeleccionada={cantidadSeleccionada}
         setCantidadSeleccionada={setCantidadSeleccionada}
        />
