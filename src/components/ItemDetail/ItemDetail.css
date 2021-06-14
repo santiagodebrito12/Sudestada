@@ -1,0 +1,12 @@
+.contenedor-detail{
+    width: 100%;
+    padding: 15px;
+}
+
+.titulo-detail{
+    border-bottom: 1px solid grey;
+}
+.img-detail{
+    width: 500px;
+    height: 450px;
+}
