@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemDetail from '../ItemDetail/ItemDetail';
+
 import './Item.css';
 
 
@@ -17,6 +18,8 @@ const Card = ({producto,kite,nombre,cantidadSeleccionada,setCantidadSeleccionada
             cantidadSeleccionada += cantidad 
         )
     }
+
+
     return ( 
             <div className="card" width="18rem">
             <img src={kite} className="card-img-top shadow p-3 mb-5 bg-body rounded" alt="foto-kite"></img>
@@ -31,11 +34,13 @@ const Card = ({producto,kite,nombre,cantidadSeleccionada,setCantidadSeleccionada
                 />
 
                <button className="btn btn-primary" onClick={handleSubmit}>Agregar al carrito</button>
-               <a href="#itemDetail" onClick={()=>{
-                   setItemActive(true);
-                   setProductoSeleccionado(producto);
-
-               }}>Ver detalle de producto</a>
+               
+               { <a href="http://localhost:8001/itemdetail"
+                onClick={()=>{
+                 
+                 setItemActive(true);
+                  setProductoSeleccionado(producto);  }}
+                  >Ver detalle de producto</a> }
 
                
                

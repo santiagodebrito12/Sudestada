@@ -8,21 +8,33 @@ const ItemDetailContainer = ({productoSeleccionado,kite}) => {
    
     const [selection, setSeletion] = useState({});
 
+      
+
+
     const selectionEvent = new Promise((resolve,reject)=>{
-        setTimeout(() => {
             resolve(productoSeleccionado);
-        }, 2000);
+        
 })    
     selectionEvent.then((producto)=>{
             setSeletion(producto);
+         
+          
     })    
 
     return (
-        <div>
-        <ItemDetail 
-        selection={selection}
-        kite={kite}/>
-        </div>
+           
+        
+         <div>
+         
+         <a href="http://localhost:8001/"> Volver al home </a>
+         
+         <ItemDetail 
+         selection={selection}
+         kite={kite}/> 
+
+         </div>
+           
+        
       );
 }
  

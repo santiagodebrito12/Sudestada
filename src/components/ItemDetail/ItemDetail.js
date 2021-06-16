@@ -4,6 +4,7 @@ import './ItemDetail.css';
 
 
 const ItemDetail = ({selection,kite}) => {
+    
     return (
         <div className="contenedor-detail">
             <h2 className="titulo-detail">{selection.nombre}</h2>
