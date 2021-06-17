@@ -6,10 +6,10 @@ import './Seccion.css';
 
 
 
-const ItemListContainer = ({greeting,productoSeleccionado,setProductoSeleccionado}) => {
+const ItemListContainer = ({greeting}) => {
     
     const[cantidadSeleccionada,setCantidadSeleccionada]=useState(0);
-    const stock = 6;
+    
  
 
     return (
@@ -20,8 +20,6 @@ const ItemListContainer = ({greeting,productoSeleccionado,setProductoSeleccionad
        <ItemList 
         cantidadSeleccionada={cantidadSeleccionada}
         setCantidadSeleccionada={setCantidadSeleccionada}
-        productoSeleccionado={productoSeleccionado}
-        setProductoSeleccionado={setProductoSeleccionado} 
        />
         <div className="contenedor-carrito">
             <h2>Carrito</h2>

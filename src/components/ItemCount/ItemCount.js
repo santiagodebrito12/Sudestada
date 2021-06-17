@@ -31,7 +31,6 @@ const ItemCount = ({cantidad,setCantidad}) => {
           }}> +1 </button>
         :
         <button className="button" disabled="true"> +1 </button>}  
-        
         </div>
        
         </>

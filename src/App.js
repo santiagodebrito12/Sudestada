@@ -3,7 +3,6 @@ import NavBar from './components/NavBar/NavBar';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import Main from './components/Main/Main';
 import ItemListContainer from './components/Seccion/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 
@@ -15,31 +14,25 @@ function App() {
   
   
   return (
+
     <Router>
-    
      <NavBar
      />
 
      <Main/>  
-
+    <Switch>
     
-      <Switch>
-      <Route exact path="/">
-      <ItemListContainer
-     greeting='Bienvenidos a mi aplicacion'
-     
+      <Route exact path='/'>
+    
+    <ItemListContainer
+    greeting='Bienvenidos a mi Aplicacion'
      />
+    
+    
      </Route>
-
-     <Route exact path="/itemdetail">
-      
-      { <ItemDetailContainer
-      /> }
-     
-     </Route>
-      
-      </Switch>
+     </Switch>
     </Router>
+    
   );
 }
 

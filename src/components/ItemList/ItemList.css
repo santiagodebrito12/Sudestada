@@ -1,5 +1,4 @@
-.contenedor-seccion-detail{
-    width: 90%;
-    padding: 15px;
-    margin: 5% 5%;
+.contenedor-productos{
+    align-items: center;
+    justify-content: center;
 }

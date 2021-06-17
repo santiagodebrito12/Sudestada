@@ -1,10 +1,8 @@
 import React,{useState} from 'react';
 import Card from '../Item/Item';
-import kite from '../../img/imagen-kite.jpg';
-import ItemDetail from '../ItemDetail/ItemDetail';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
-
 import './ItemList.css';
+import kite from '../../img/imagen-kite.jpg';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 const productos = [
     {nombre:'kite cabrinha',
@@ -47,45 +45,53 @@ const productos = [
   ]
   
 
-const ItemList= ({cantidadSeleccionada,setCantidadSeleccionada}) => {
-   
-    const [respuesta,guardarRespuesta]=useState([]);
-    const[productoSeleccionado,setProductoSeleccionado]=useState({});
+const ItemList = ({cantidadSeleccionada,setCantidadSeleccionada}) => {
+  const [respuesta,guardarRespuesta]=useState([]);
+  const[productoSeleccionado,setProductoSeleccionado]=useState({});
+  const [mostrarDetalle,setMostrarDetalle] = useState(false);
 
-    
-
-    const consulta = new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve(productos);
-        }, 2000);
-        
+  const consulta = new Promise((resolve,reject)=>{
+      setTimeout(() => {
+          resolve(productos);
+      }, 2000);
+      
 })
 
-consulta.then((data)=>{
-   guardarRespuesta(data);
+  consulta.then((data)=>{
+      guardarRespuesta(data);
+      
 })
+
+    return ( 
+     <>
+     { mostrarDetalle
+      
+      ?<ItemDetailContainer 
+      productoSeleccionado={productoSeleccionado}
+      kite={kite}
+      />
+     
+      :
+
+         <div className="contenedor-productos">
+      {respuesta.map(item=>{
+        return(
+          <Card
+         kite={kite}
+          producto={item}
+         productoSeleccionado={productoSeleccionado}
+         setProductoSeleccionado={setProductoSeleccionado}
+         cantidadSeleccionada={cantidadSeleccionada}
+         setCantidadSeleccionada={setCantidadSeleccionada}
+         setMostrarDetalle={setMostrarDetalle}
+          />
+        )
+       }
+      )}
+      </div>}
     
-    
-    return (
-        <>
-        <div className="container-fluid d-flex flex-wrap contenedor-productos">
-            {respuesta.map((producto=>{
-                return(
-                    <Card
-                    key={producto.id}
-                    producto={producto}
-                    kite={kite}
-                    cantidadSeleccionada={cantidadSeleccionada}
-                    setCantidadSeleccionada={setCantidadSeleccionada}
-                    productoSeleccionado={productoSeleccionado}
-                    setProductoSeleccionado={setProductoSeleccionado}
-                    
-                    />
-                )
-            }))}
-        </div>
-        
-        </>
+     </>
+
       );
 }
  

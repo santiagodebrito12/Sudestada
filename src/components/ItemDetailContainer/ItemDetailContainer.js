@@ -6,7 +6,9 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = ({productoSeleccionado,kite}) => {
    
-    const [selection, setSeletion] = useState({});
+    const [selection, setSeletion] = useState({
+        
+    });
 
       
 
@@ -17,8 +19,6 @@ const ItemDetailContainer = ({productoSeleccionado,kite}) => {
 })    
     selectionEvent.then((producto)=>{
             setSeletion(producto);
-         
-          
     })    
 
     return (
