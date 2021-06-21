@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 
@@ -26,7 +27,7 @@ const ItemDetailContainer = ({productoSeleccionado,kite}) => {
         
          <div>
          
-         <a href="http://localhost:8001/"> Volver al home </a>
+         <Link to="http://localhost:8001/"> Volver al home </Link>
          
          <ItemDetail 
          selection={selection}

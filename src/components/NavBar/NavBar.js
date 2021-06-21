@@ -1,32 +1,45 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
 const NavBar = ({total}) => {
     
     return (
-       <header className="contenedor-header">
-           <div>
-              <p className="logo">Sudestada</p>
+    
+        
+         <nav className="navbar  navbar-expand-lg navbar-dark bg-dark ">
+                   
+                    <div className="container-fluid">
+            
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                  <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                      <NavLink exact activeClassName="active" className="nav-link" aria-current="page" to="/">Home</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink exact activeClassName="active" className="nav-link" to="/">KiteSurf</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink exact activeClassName="active" className="nav-link"  to="#">Surf</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink exact activeClassName="active" className="nav-link"  to="#"><CartWidget total={total}/></NavLink>
+                    </li>
+                    </ul>
+           </div>
+           </div>
+
+           <div className="contenedor-logo">
+              <p className="logo"><Link className="logo-link" to="/">SUDESTADA</Link></p>
            </div>
            
-           <nav>
-           <ul>
-               <li><a className="enlances-nav"  href="#home"> Home</a></li>
-               <li><a className="enlances-nav"  href="#kitesurf"> Kitesurf</a></li>
-               <li><a className="enlances-nav"  href="#surf" >Surf</a></li>
-               <li><a className="enlances-nav"  href="#windsurf">Windsurf</a></li> 
-               <li><a className="enlances-nav"  href="#contacto">Contacto</a></li> 
-               <CartWidget
-               total={total}
-               /> 
-                
-  
-           </ul>
            </nav>
+        
 
-           
-       </header>
       );
 }
  

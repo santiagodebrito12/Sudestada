@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import { NavLink } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
 
@@ -11,17 +11,20 @@ import './Item.css';
 const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,productoSeleccionado,setProductoSeleccionado,setMostrarDetalle}) => {
     
     const[cantidad,setCantidad]=useState(0);
-  
+    const [amount , setAmount]=useState(0)
+   
     const handleSubmit = () =>{
         setCantidadSeleccionada(
             cantidadSeleccionada += cantidad 
         )
+        setAmount(cantidadSeleccionada);
     }
 
 
     return ( 
           
             <div className="card" width="18rem">
+            
             <img src={kite} className="card-img-top shadow p-3 mb-5 bg-body rounded" alt="foto-kite"></img>
             <div className="card-body descripcion">
                 <p className="card-title"> {producto.nombre} </p>
@@ -36,17 +39,24 @@ const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,produc
 
                <button className="btn btn-primary" onClick={handleSubmit}>Agregar al carrito</button>
                
-               {(cantidadSeleccionada>=1) ? <button className="btn btn-success">TERMINAR COMPRA</button> : null }
-               { <a href="#itemdetail"
+               {(amount>=1) ? <button className="btn btn-success">TERMINAR COMPRA</button> : null }
+              
+              
+              
+                <NavLink to="/item/:id"
                 onClick={(e)=>{
                  e.preventDefault();
                   setProductoSeleccionado(producto);
                   setMostrarDetalle(true);
                   }}
-                  >Ver detalle de producto</a> }
+                  >
+                      Ver detalle de producto
 
- 
-            </div>
+                    </NavLink>
+                
+           
+            
+           </div>
             </div>
             
         );
