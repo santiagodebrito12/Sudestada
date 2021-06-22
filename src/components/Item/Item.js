@@ -11,7 +11,8 @@ import './Item.css';
 const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,productoSeleccionado,setProductoSeleccionado,setMostrarDetalle}) => {
     
     const[cantidad,setCantidad]=useState(0);
-    const [amount , setAmount]=useState(0)
+    const [amount , setAmount]=useState(0);
+    
    
     const handleSubmit = () =>{
         setCantidadSeleccionada(
@@ -37,7 +38,7 @@ const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,produc
                 
                 />
 
-               <button className="btn btn-primary" onClick={handleSubmit}>Agregar al carrito</button>
+              {(amount>=1) ? null : <button className="btn btn-primary" onClick={handleSubmit}>Agregar al carrito</button> }
                
                {(amount>=1) ? <button className="btn btn-success">TERMINAR COMPRA</button> : null }
               
