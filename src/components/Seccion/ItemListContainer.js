@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import ItemList from '../ItemList/ItemList';
+import Cart from '../Cart/Cart';
 import './Seccion.css';
 
 
@@ -21,11 +22,8 @@ const ItemListContainer = ({greeting}) => {
         cantidadSeleccionada={cantidadSeleccionada}
         setCantidadSeleccionada={setCantidadSeleccionada}
        />
-        <div className="contenedor-carrito">
-            <h2>Carrito</h2>
-            <p className="parrafo-carrito">Cantidad seleccionada : {cantidadSeleccionada} </p>
-           </div>
-        </div>
+       <Cart/>
+       </div>
         </>
       );
 }

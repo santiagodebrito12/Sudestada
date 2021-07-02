@@ -1,0 +1,11 @@
+.contendor-carrito{
+    margin: 2% auto;
+    text-align: center;
+    width: 50%;
+    border: 1px solid red;
+}
+
+.img-kite{
+    width: 150px;
+    height: 150px;
+}

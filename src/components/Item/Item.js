@@ -1,5 +1,7 @@
-import React,{useState} from 'react';
-import { NavLink } from 'react-router-dom';
+import React,{useContext, useState} from 'react';
+import { Link } from 'react-router-dom';
+import CartContext from '../../context/CartContext/CartContext';
+import SudContext from '../../context/SudContext/SudContext';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
 
@@ -8,18 +10,12 @@ import './Item.css';
 
 
 
-const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,productoSeleccionado,setProductoSeleccionado,setMostrarDetalle}) => {
+const Card = ({producto,kite}) => {
     
-    const[cantidad,setCantidad]=useState(0);
-    const [amount , setAmount]=useState(0);
+    const [cantidad , SetCantidad]=useState(0)
+    const {Cart,addItem}=useContext(CartContext);
+    const{setProductoSeleccionado,setMostrarDetalle} = useContext(SudContext);
     
-   
-    const handleSubmit = () =>{
-        setCantidadSeleccionada(
-            cantidadSeleccionada += cantidad 
-        )
-        setAmount(cantidadSeleccionada);
-    }
 
 
     return ( 
@@ -34,17 +30,27 @@ const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,produc
                 
                 <ItemCount
                 cantidad={cantidad}
-                setCantidad={setCantidad}
-                
+                SetCantidad={SetCantidad}
                 />
 
-              {(amount>=1) ? null : <button className="btn btn-primary" onClick={handleSubmit}>Agregar al carrito</button> }
-               
-               {(amount>=1) ? <button className="btn btn-success">TERMINAR COMPRA</button> : null }
-              
-              
-              
-                <NavLink to="/item/:id"
+                <button className="button button-primary" onClick={()=>{
+                   if(cantidad !== 0){ 
+                    
+                    
+                    addItem({
+                        nombre:producto.nombre,
+                        precio:producto.precio,
+                        cantidad:cantidad,
+                        id:producto.id
+                    })    
+                   }
+                   
+                   
+                }
+
+                }>Agregar al carrito</button>
+                
+                <Link to="/item/:id"
                 onClick={(e)=>{
                  e.preventDefault();
                   setProductoSeleccionado(producto);
@@ -53,7 +59,7 @@ const Card = ({producto,kite,cantidadSeleccionada,setCantidadSeleccionada,produc
                   >
                       Ver detalle de producto
 
-                    </NavLink>
+                    </Link>
                 
            
             

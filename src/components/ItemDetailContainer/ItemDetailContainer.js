@@ -1,26 +1,23 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import { Link } from 'react-router-dom';
+import SudContext from '../../context/CartContext/CartContext';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 
 
 
-const ItemDetailContainer = ({productoSeleccionado,kite}) => {
+const ItemDetailContainer = ({kite}) => {
    
-    const [selection, setSeletion] = useState({
+  
+
+
+//     const selectionEvent = new Promise((resolve,reject)=>{
+//             resolve(productoSeleccionado);
         
-    });
-
-      
-
-
-    const selectionEvent = new Promise((resolve,reject)=>{
-            resolve(productoSeleccionado);
-        
-})    
-    selectionEvent.then((producto)=>{
-            setSeletion(producto);
-    })    
+// })    
+//     selectionEvent.then((producto)=>{
+//             setSeletion(producto);
+//     })    
 
     return (
            
@@ -30,7 +27,7 @@ const ItemDetailContainer = ({productoSeleccionado,kite}) => {
          <Link to="http://localhost:8001/"> Volver al home </Link>
          
          <ItemDetail 
-         selection={selection}
+        //  selection={selection}
          kite={kite}/> 
 
          </div>

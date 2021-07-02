@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
-const NavBar = ({total}) => {
+const NavBar = () => {
     
     return (
     
@@ -27,7 +27,7 @@ const NavBar = ({total}) => {
                       <NavLink exact activeClassName="active" className="nav-link"  to="#">Surf</NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink exact activeClassName="active" className="nav-link"  to="#"><CartWidget total={total}/></NavLink>
+                      <NavLink exact activeClassName="active" className="nav-link"  to="#"><CartWidget/></NavLink>
                     </li>
                     </ul>
            </div>
