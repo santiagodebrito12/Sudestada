@@ -12,7 +12,8 @@ import './Item.css';
 
 const Card = ({producto,kite}) => {
     
-    const [cantidad , SetCantidad]=useState(0)
+    const [cantidad , SetCantidad]=useState(0);
+    const [finalizarCompra,setFinalizarCompra] = useState(false);
     const {Cart,addItem}=useContext(CartContext);
     const{setProductoSeleccionado,setMostrarDetalle} = useContext(SudContext);
     
@@ -32,23 +33,25 @@ const Card = ({producto,kite}) => {
                 cantidad={cantidad}
                 SetCantidad={SetCantidad}
                 />
-
-                <button className="button button-primary" onClick={()=>{
-                   if(cantidad !== 0){ 
+                {finalizarCompra 
+                ? <button>Finalizar Compra </button> 
+                :  <button className="button button-primary" onClick={()=>{
+                    if(cantidad !== 0){ 
+                     
+                     
+                     addItem({
+                         nombre:producto.nombre,
+                         precio:producto.precio,
+                         cantidad:cantidad,
+                         id:producto.id
+                     })    
+                    }
                     
-                    
-                    addItem({
-                        nombre:producto.nombre,
-                        precio:producto.precio,
-                        cantidad:cantidad,
-                        id:producto.id
-                    })    
-                   }
-                   
-                   
-                }
-
-                }>Agregar al carrito</button>
+                    setFinalizarCompra(true)
+                 }
+ 
+                 }>Agregar al carrito</button>}
+               
                 
                 <Link to="/item/:id"
                 onClick={(e)=>{
