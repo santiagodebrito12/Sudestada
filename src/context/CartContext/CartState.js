@@ -5,21 +5,24 @@ import { CartReducer } from './CartReducer';
 const CartState = (props) => {
 
     const initialState = [];
-    
-   
     const [state,dispatch]= useReducer(CartReducer, initialState);
 
 
 
 
+
     const addItem = (item) =>{
-       
         dispatch({
             type:'ADD_ITEM',
             payload:item,
         })
     }
 
+   
+    // const setItem = (cart) =>{
+    //     localStorage.setItem('carrito',JSON.stringify(cart))
+    // }
+    
 
     const deleteItem = id =>{
         dispatch({
@@ -38,7 +41,9 @@ const CartState = (props) => {
     return (
         <CartContext.Provider 
         value={{
+          
             Cart:state,
+            // setItem,
             addItem,
             deleteItem,
             clearCart,

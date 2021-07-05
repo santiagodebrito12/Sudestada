@@ -1,5 +1,5 @@
 import React,{useContext, useState} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import CartContext from '../../context/CartContext/CartContext';
 import SudContext from '../../context/SudContext/SudContext';
 import ItemCount from '../ItemCount/ItemCount';
@@ -14,7 +14,7 @@ const Card = ({producto,kite}) => {
     
     const [cantidad , SetCantidad]=useState(0);
     const [finalizarCompra,setFinalizarCompra] = useState(false);
-    const {Cart,addItem}=useContext(CartContext);
+    const {Cart,addItem,setItem}=useContext(CartContext);
     const{setProductoSeleccionado,setMostrarDetalle} = useContext(SudContext);
     
 
@@ -34,7 +34,9 @@ const Card = ({producto,kite}) => {
                 SetCantidad={SetCantidad}
                 />
                 {finalizarCompra 
-                ? <button>Finalizar Compra </button> 
+               
+               ? <button>Finalizar Compra </button> 
+               
                 :  <button className="button button-primary" onClick={()=>{
                     if(cantidad !== 0){ 
                      
@@ -44,10 +46,13 @@ const Card = ({producto,kite}) => {
                          precio:producto.precio,
                          cantidad:cantidad,
                          id:producto.id
-                     })    
+                     }) 
+                     
+                    // setItem(Cart)
+                    setFinalizarCompra(true)
+
                     }
                     
-                    setFinalizarCompra(true)
                  }
  
                  }>Agregar al carrito</button>}
@@ -55,9 +60,8 @@ const Card = ({producto,kite}) => {
                 
                 <Link to="/item/:id"
                 onClick={(e)=>{
-                 e.preventDefault();
-                  setProductoSeleccionado(producto);
-                  setMostrarDetalle(true);
+            
+                localStorage.setItem('producto', JSON.stringify(producto))
                   }}
                   >
                       Ver detalle de producto

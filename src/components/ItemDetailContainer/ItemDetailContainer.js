@@ -6,29 +6,18 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 
 
-const ItemDetailContainer = ({kite}) => {
+const ItemDetailContainer = () => {
    
   
-
-
-//     const selectionEvent = new Promise((resolve,reject)=>{
-//             resolve(productoSeleccionado);
-        
-// })    
-//     selectionEvent.then((producto)=>{
-//             setSeletion(producto);
-//     })    
-
+    
     return (
            
         
          <div>
          
-         <Link to="http://localhost:8001/"> Volver al home </Link>
+         <Link to="/"> Volver al home </Link>
          
-         <ItemDetail 
-        //  selection={selection}
-         kite={kite}/> 
+         <ItemDetail /> 
 
          </div>
            

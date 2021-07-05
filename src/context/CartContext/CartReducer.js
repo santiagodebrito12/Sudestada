@@ -7,11 +7,15 @@ export const CartReducer =(state,action)=>{
                 case 'ADD_ITEM':
                     return [ ...state , payload];
                 
-               case 'DELETE_ITEM':
+            
+                case 'DELETE_ITEM':
                     return state.filter(state => state.id !== payload);
                
+                    
                 case 'CLEAR_CART':
                     return state = [];
+
+              
 
             default:
                 break;

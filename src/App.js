@@ -19,26 +19,35 @@ function App() {
   
   return (
 
-    <Router>
-      <SudestadaState>
-        <CartState>
-      <NavBar/>
-
-     <Main/>  
-      <Switch>
-
-      <Route  exact path='/' component={ItemListContainer}/>
-     
-      <Route exact path='/category/:id' component={ItemDetailContainer}/>
     
-      <Route  path="/item/:id" component={ItemDetailContainer}/>
+      <SudestadaState>
+      <CartState>
+      <Router>
+            <NavBar/>
 
-       
-     </Switch>
-     </CartState>
-     </SudestadaState>
+            <Main/>  
+           
+           
+              
+              <Switch>
+
+              <Route  exact path='/' component={ItemListContainer}/>
+     
+             <Route exact path='/category/:id' component={ItemDetailContainer}/>
+    
+             <Route  path="/item/:id" component={ItemDetailContainer}/>
+
+             <Route exact path="/cart" component={Cart}/>
+        
+           </Switch>
+    
+           </Router>
+     
+        </CartState>
+     
+      </SudestadaState>
    
-    </Router>
+    
     
   );
 }
