@@ -5,8 +5,8 @@ import SudReducer from '../../context/SudContext/SudestadaReducer';
 import './ItemCount.css';
 
 
-const ItemCount = ({ cantidad , SetCantidad}) => {
-    const stock = 6 ;
+const ItemCount = ({ cantidad , SetCantidad, stock}) => {
+    
   
     return (
       <>

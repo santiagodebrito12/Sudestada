@@ -7,6 +7,7 @@ import './Seccion.css';
 
 
 
+
 const ItemListContainer = ({greeting}) => {
     
     const[cantidadSeleccionada,setCantidadSeleccionada]=useState(0);
@@ -22,7 +23,7 @@ const ItemListContainer = ({greeting}) => {
         cantidadSeleccionada={cantidadSeleccionada}
         setCantidadSeleccionada={setCantidadSeleccionada}
        />
-       <Cart/>
+       {/* <Cart/> */}
        </div>
         </>
       );

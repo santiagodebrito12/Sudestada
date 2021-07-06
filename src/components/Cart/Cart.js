@@ -1,12 +1,17 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import CartContext from '../../context/CartContext/CartContext';
 import './Cart.css';
 import Kite from '../../img/imagen-kite.jpg';
+import AmountContext from '../../context/AmountContext/AmountContext';
 
 const Cart = () => {
-    const {Cart,deleteItem,clearCart} = useContext(CartContext)
-    // const carrito = JSON.parse(localStorage.getItem('carrito'));
 
+    const {Cart,deleteItem,clearCart} = useContext(CartContext)
+    const {amount,decrementAmount,resetAmount}=useContext(AmountContext);
+    // const carrito = JSON.parse(localStorage.getItem('carrito'));
+    
+    
+    
     return (
         <div className="contenedor-carrito">
            <h1>Tu carrito de compras</h1>
@@ -19,6 +24,8 @@ const Cart = () => {
             ? 
                    
             Cart.map((producto,i)=>{
+              
+               
                 return(
                     <div key={producto.id} className="d-flex justify-content-between align-items-center">
                         <img src={Kite} alt="imagen kite" className="img-kite"/>
@@ -28,7 +35,7 @@ const Cart = () => {
                         <button className=" btn-danger" onClick={()=>{
                             deleteItem(producto.id);
                         
-                           
+                           decrementAmount(producto.precio)
 
                         }}>Elimar del carrito</button>
                     </div>
@@ -40,9 +47,14 @@ const Cart = () => {
             :<p className="text-center ">No hay productos en el carrito</p>}
             <button onClick={()=>{
                 clearCart();
+                resetAmount();
             }} className="button-primary"> Limpiar Carrito </button>
             </div>
-
+        
+            <p className="amount">Total a pagar: {amount}</p>
+         <div>
+             
+         </div>
         </div>
     )
 }

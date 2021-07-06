@@ -7,6 +7,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import SudestadaState from './context/SudContext/SudestadaState';
 import CartState from './context/CartContext/CartState';
+import AmountState from './context/AmountContext/AmountState';
+
 
 
 
@@ -21,7 +23,11 @@ function App() {
 
     
       <SudestadaState>
+      
       <CartState>
+
+      <AmountState>    
+
       <Router>
             <NavBar/>
 
@@ -43,8 +49,12 @@ function App() {
     
            </Router>
      
+
+    
+           </AmountState>  
+        
         </CartState>
-     
+      
       </SudestadaState>
    
     

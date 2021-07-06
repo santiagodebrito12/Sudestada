@@ -5,15 +5,20 @@ export const CartReducer =(state,action)=>{
     switch(type){
 
                 case 'ADD_ITEM':
-                    return [ ...state , payload];
-                
+                    return [...state,payload]
+            
+                    
             
                 case 'DELETE_ITEM':
-                    return state.filter(state => state.id !== payload);
-               
+                    return  state.filter(state => state.id !== payload);
                     
+                    
+                
                 case 'CLEAR_CART':
-                    return state = [];
+                   return state=[];
+                    
+                    
+                    
 
               
 

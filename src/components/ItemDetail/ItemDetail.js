@@ -1,6 +1,7 @@
-import React,{useContext} from 'react';
+import React,{useContext,useEffect,useState} from 'react';
 import SudContext from '../../context/SudContext/SudContext';
-
+import { getFirestore } from '../../firebase/conector';
+import Spinner from '../../helpers/Spinner/Spinner';
 import Kite from '../../img/imagen-kite.jpg';
 
 import './ItemDetail.css';
@@ -8,28 +9,62 @@ import './ItemDetail.css';
 
 
 const ItemDetail = () => {
-    const producto = localStorage.getItem('producto');
-    const productoSel = JSON.parse(producto)
-   console.log(productoSel)
+   const{productoSeleccionado}=useContext(SudContext);
+   const [mostrarProducto, setMostrarProducto] = useState([]);
+   const {id} = productoSeleccionado;
 
-    const {productoSeleccionado} = useContext(SudContext)
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = db.collection('items');
+        const productoSel = itemCollection.where('id', '==' , id );
+
+        productoSel.get()
+        .then((querySnapshot)=>{
+            if(querySnapshot.size === 0){
+                console.log('no hay resultado');
+                return;
+            }
+            setMostrarProducto(querySnapshot.docs.map(doc=>doc.data()));
+        })
+        .catch(
+            console.log('error')
+        )
+    }, [productoSeleccionado])
+
+    console.log(mostrarProducto)
 
     return (
         <div className="contenedor-detail">
-        <h2 className="titulo-detail">{productoSel.nombre }</h2>
-        <div className="d-flex justify-content-around align-items-center">
-            <div className="contenedor-img">
-            <img src={Kite} className="img-detail"/>
-            </div>
-            <div className="contenedor-info p-5">
-            <p>Descripcion: {productoSel.descripcion}</p>
-            <p>Industria : {productoSel.industria }</p>
-            <p>Precio : {productoSel.precio}</p>
-            </div>
-        </div>
-    </div>
-     
- 
+        
+        {mostrarProducto.length>0
+        
+        
+        ? mostrarProducto.map(producto=>{
+            return(
+                <div key={producto.id}>
+                       <h2 className="titulo-detail">{producto.nombre }</h2>
+           
+                <div className="contenedor-img">
+                   <img src={Kite} className="img-detail"/>
+                </div>
+                    <div className="contenedor-info p-5">
+                       <p>Descripcion: {producto.descripcion}</p>
+                       <p>Industria : {producto.industria }</p>
+                        <p>Precio : {producto.precio}</p>
+                   </div>
+                   </div>   
+
+               
+            )
+        })
+        
+    
+    
+    
+        :<Spinner/>}
+        
+    
+      </div>
       );
 }
  

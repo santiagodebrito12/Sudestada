@@ -1,7 +1,9 @@
 import React,{useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
+import AmountContext from '../../context/AmountContext/AmountContext';
 import CartContext from '../../context/CartContext/CartContext';
 import SudContext from '../../context/SudContext/SudContext';
+import SudestadaState from '../../context/SudContext/SudestadaState';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
 
@@ -10,12 +12,14 @@ import './Item.css';
 
 
 
-const Card = ({producto,kite}) => {
+const Card = ({producto,kite,key}) => {
     
     const [cantidad , SetCantidad]=useState(0);
     const [finalizarCompra,setFinalizarCompra] = useState(false);
     const {Cart,addItem,setItem}=useContext(CartContext);
-    const{setProductoSeleccionado,setMostrarDetalle} = useContext(SudContext);
+    const {setProductoSeleccionado} = useContext(SudContext);
+    const {incrementAmount}= useContext(AmountContext);
+    const stock = parseInt(producto.stock);
     
 
 
@@ -32,10 +36,11 @@ const Card = ({producto,kite}) => {
                 <ItemCount
                 cantidad={cantidad}
                 SetCantidad={SetCantidad}
+                stock={stock}
                 />
                 {finalizarCompra 
                
-               ? <button>Finalizar Compra </button> 
+               ? <Link className="button" to="/cart">Finalizar Compra </Link> 
                
                 :  <button className="button button-primary" onClick={()=>{
                     if(cantidad !== 0){ 
@@ -47,6 +52,8 @@ const Card = ({producto,kite}) => {
                          cantidad:cantidad,
                          id:producto.id
                      }) 
+
+                     incrementAmount(producto.precio);
                      
                     // setItem(Cart)
                     setFinalizarCompra(true)
@@ -60,8 +67,8 @@ const Card = ({producto,kite}) => {
                 
                 <Link to="/item/:id"
                 onClick={(e)=>{
-            
-                localStorage.setItem('producto', JSON.stringify(producto))
+                    setProductoSeleccionado(producto)
+               
                   }}
                   >
                       Ver detalle de producto
