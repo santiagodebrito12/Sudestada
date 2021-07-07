@@ -1,16 +1,26 @@
-.contendor-carrito{
-    margin: 2% auto;
-    text-align: center;
-    width: 50%;
-    border: 1px solid red;
+@media(max-width:1023px){
+    .contendor-carrito{
+        margin: 2% auto;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+   .img-kite{
+       width: 80px;
+       height: 80px;
+   }
+    .card{
+        width: 100%;
+    }
+}
+@media(min-width:1024px){
+
+    .img-kite{
+        width: 150px;
+        height: 150px;
+    }
+    .amount{
+        font-size: 3rem;
+    }
 }
 
-.img-kite{
-    width: 150px;
-    height: 150px;
-}
-
-.amount{
-    font-size: 24px;
-    text-align: center;
-}

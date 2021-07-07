@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import AmountContext from '../../context/AmountContext/AmountContext';
 import CartContext from '../../context/CartContext/CartContext';
 import SudContext from '../../context/SudContext/SudContext';
-import SudestadaState from '../../context/SudContext/SudestadaState';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
 
@@ -16,11 +15,13 @@ const Card = ({producto,kite,key}) => {
     
     const [cantidad , SetCantidad]=useState(0);
     const [finalizarCompra,setFinalizarCompra] = useState(false);
-    const {Cart,addItem,setItem}=useContext(CartContext);
+    const {addItem}=useContext(CartContext);
     const {setProductoSeleccionado} = useContext(SudContext);
     const {incrementAmount}= useContext(AmountContext);
     const stock = parseInt(producto.stock);
     
+    const total = cantidad * producto.precio;
+
 
 
     return ( 
@@ -50,10 +51,10 @@ const Card = ({producto,kite,key}) => {
                          nombre:producto.nombre,
                          precio:producto.precio,
                          cantidad:cantidad,
+                         total:producto.precio*producto.cantidad,
                          id:producto.id
                      }) 
-
-                     incrementAmount(producto.precio);
+                     incrementAmount(total)
                      
                     // setItem(Cart)
                     setFinalizarCompra(true)

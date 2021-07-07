@@ -9,13 +9,14 @@ const Cart = () => {
     const {Cart,deleteItem,clearCart} = useContext(CartContext)
     const {amount,decrementAmount,resetAmount}=useContext(AmountContext);
     // const carrito = JSON.parse(localStorage.getItem('carrito'));
+  
     
-    
+  
     
     return (
         <div className="contenedor-carrito">
            <h1>Tu carrito de compras</h1>
-            <div className="card w-50">
+            <div className="card w-75">
         
            {(Cart.length>0)
             
@@ -24,20 +25,21 @@ const Cart = () => {
             ? 
                    
             Cart.map((producto,i)=>{
-              
-               
+              const total = producto.precio * producto.cantidad;
+
                 return(
-                    <div key={producto.id} className="d-flex justify-content-between align-items-center">
-                        <img src={Kite} alt="imagen kite" className="img-kite"/>
+                    <div key={producto.id} className="d-flex justify-content-between align-items-center ">
+                        <img src={Kite} alt="imagen kite" className="img-kite img-fluid"/>
                         <p className="m-2 p-2">{producto.nombre}</p>
                         <p className="m-2 p-2">{producto.cantidad}</p>
                         <p className="m-2 p-2">{producto.precio}</p>
+                        
                         <button className=" btn-danger" onClick={()=>{
                             deleteItem(producto.id);
                         
-                           decrementAmount(producto.precio)
+                           decrementAmount(total)
 
-                        }}>Elimar del carrito</button>
+                        }}>X</button>
                     </div>
                 )
             })
@@ -48,10 +50,10 @@ const Cart = () => {
             <button onClick={()=>{
                 clearCart();
                 resetAmount();
-            }} className="button-primary"> Limpiar Carrito </button>
+            }} className="button-primary w-50 d-block m-auto">  Limpiar Carrito </button>
             </div>
         
-            <p className="amount">Total a pagar: {amount}</p>
+            <p className="amount">Total a pagar: $ {amount}</p>
          <div>
              
          </div>

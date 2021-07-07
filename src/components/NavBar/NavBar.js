@@ -30,13 +30,15 @@ const NavBar = () => {
                       <NavLink exact activeClassName="active" className="nav-link"  to="#"><CartWidget/></NavLink>
                     </li>
                     </ul>
-           </div>
-           </div>
+                </div>
+
+
 
            <div className="contenedor-logo">
               <p className="logo"><Link className="logo-link" to="/">SUDESTADA</Link></p>
            </div>
-           
+           </div>
+
            </nav>
         
 
