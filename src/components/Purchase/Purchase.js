@@ -9,7 +9,7 @@ import firebase from 'firebase';
 
 
 const Purchase = () => {
-    const {amount}=useContext(AmountContext);
+    const {amount,setId}=useContext(AmountContext);
     const{Cart,setclientInformation}=useContext(CartContext);
     const [loading, setLoading] = useState(false);
     
@@ -60,6 +60,7 @@ const Purchase = () => {
       .then(({ id }) => {
         setLoading(false);
         console.log('operacion creada con exito');
+        
       })
       .catch(error => {
         setLoading(false);

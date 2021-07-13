@@ -1,9 +1,9 @@
-import React,{useReducer} from 'react'
+import React,{useReducer, useState} from 'react'
 import AmountContext from './AmountContext';
 import { AmountReducer } from './AmountReducer';
 
 const AmountState = (props) => {
-    
+    const [id, setId] = useState('');
     const initialState = 0;
 
     const [state, dispatch] = useReducer(AmountReducer, initialState)
@@ -34,6 +34,8 @@ const AmountState = (props) => {
     return (
         <AmountContext.Provider value={{
             amount:state,
+            id,
+            setId,
             incrementAmount,
             decrementAmount,
             resetAmount,
