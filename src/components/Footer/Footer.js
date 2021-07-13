@@ -10,13 +10,13 @@ const Footer = () => {
     return (
         <>
         <footer className="bg-dark">
-        <div className="container-fluid">
+        <div className="container-fluid contenedor-footer">
         
-        <div className="row ">
+      
        
         
 
-        <div className="col-4 col-footer">
+        <div className=" col-footer">
         <h4>Producto</h4>
         <ul>
             <li>Promociones</li>
@@ -25,7 +25,7 @@ const Footer = () => {
         </ul>
         </div>
 
-        <div className="col-4 col-footer">
+        <div className=" col-footer">
         <h4>Nuestra Empresa</h4>
         <ul>
             <li>Aviso Legal</li>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
 
 
-        <div className="col-4 col-footer">
+        <div className=" col-footer">
             <h4>Informacion de la tienda</h4>
             <ul>
             <li>Sudestada Kite shop</li>
@@ -46,7 +46,7 @@ const Footer = () => {
         
         
         
-        </div>
+        
         </div>
         </footer>
         </>

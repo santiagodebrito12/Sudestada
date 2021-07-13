@@ -14,16 +14,20 @@
 }
 
 @media(max-width:767px){
-    .row{
+    .contenedor-footer{
         display: flex;
         flex-direction: column;
-        
+        align-items: center;
+        justify-content: center;
+    }
+    .col-footer{
+        width: 80%;
     }
 }
 @media(min-width:768px){
-    .row{
+    .contenedor-footer{
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
     }
 }
