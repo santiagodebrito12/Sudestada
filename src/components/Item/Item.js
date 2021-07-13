@@ -21,12 +21,12 @@ const Card = ({producto,kite,key}) => {
     const stock = parseInt(producto.stock);
     
     const total = cantidad * producto.precio;
-
+    
 
 
     return ( 
           
-            <div className="card" width="18rem">
+            <div className="card">
             
             <img src={kite} className="card-img-top shadow p-3 mb-5 bg-body rounded" alt="foto-kite"></img>
             <div className="card-body descripcion">
@@ -51,12 +51,11 @@ const Card = ({producto,kite,key}) => {
                          nombre:producto.nombre,
                          precio:producto.precio,
                          cantidad:cantidad,
-                         total:producto.precio*producto.cantidad,
+                         total,
                          id:producto.id
                      }) 
                      incrementAmount(total)
                      
-                    // setItem(Cart)
                     setFinalizarCompra(true)
 
                     }

@@ -1,3 +1,27 @@
+*::after,
+*::before
+{
+  box-sizing:border-box;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%; 
+}
+:root {
+  --azul:#61dafb;
+  --azul2:#1D2D50;
+  --blanco: #ffffff;
+  --gris1: #edf2f6;
+  --gris2: #2f3848;
+  --gris3: #1a202d;
+  --negro: #000000;
+  --background:#282c34;
+  --headingFont:'Raleway', sans-serif;
+  --headingFont2:'Montserrat', sans-serif;
+  --textFont:  'Roboto', sans-serif;
+}
 body{
   background-color:#f4fafd ;
   margin: 0;
@@ -5,6 +29,7 @@ body{
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
+
 .error {
   width: 50%;
   min-height: 50px;

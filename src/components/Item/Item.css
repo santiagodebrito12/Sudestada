@@ -1,3 +1,10 @@
+@media(max-width:420px){
+    .card{
+        width: 100%;
+    }
+}
+
+
 .card{
     margin: 5%;
     padding: 1rem;
@@ -16,3 +23,4 @@
 .btn{
     width: 70%;
 }
+

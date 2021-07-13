@@ -1,0 +1,29 @@
+.container-fluid{
+    
+    padding: 2rem;
+}
+
+.col-footer{
+    
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width:767px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
+@media(min-width:768px){
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

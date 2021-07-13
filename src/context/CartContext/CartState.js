@@ -1,8 +1,14 @@
 import React,{useReducer,useState} from 'react'
 import CartContext from './CartContext';
 import { CartReducer } from './CartReducer';
- 
+
+
 const CartState = (props) => {
+    
+    const [clientInformation, setclientInformation] = useState({});
+
+
+
 
     const initialState = [];
 
@@ -19,11 +25,6 @@ const CartState = (props) => {
         })
     }
 
-   
-    // const setItem = (cart) =>{
-    //     localStorage.setItem('carrito',JSON.stringify(cart))
-    // }
-    
 
     const deleteItem = id =>{
         dispatch({
@@ -38,13 +39,14 @@ const CartState = (props) => {
         
        })
    }
-    
+
+   
     return (
         <CartContext.Provider 
         value={{
           
             Cart:state,
-            // setItem,
+            setclientInformation,
             addItem,
             deleteItem,
             clearCart,

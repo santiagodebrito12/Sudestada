@@ -3,6 +3,8 @@ import CartContext from '../../context/CartContext/CartContext';
 import './Cart.css';
 import Kite from '../../img/imagen-kite.jpg';
 import AmountContext from '../../context/AmountContext/AmountContext';
+import { Link } from 'react-router-dom';
+import Purchase from '../Purchase/Purchase';
 
 const Cart = () => {
 
@@ -51,12 +53,14 @@ const Cart = () => {
                 clearCart();
                 resetAmount();
             }} className="button-primary w-50 d-block m-auto">  Limpiar Carrito </button>
+               <p className="amount" className="text-center mt-3">Total a pagar: $ {amount}</p>
             </div>
         
-            <p className="amount">Total a pagar: $ {amount}</p>
+         
          <div>
              
          </div>
+         <Purchase/>
         </div>
     )
 }

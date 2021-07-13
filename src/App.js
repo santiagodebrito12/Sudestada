@@ -8,6 +8,8 @@ import Cart from './components/Cart/Cart';
 import SudestadaState from './context/SudContext/SudestadaState';
 import CartState from './context/CartContext/CartState';
 import AmountState from './context/AmountContext/AmountState';
+import ConfirmeMessage from './components/ConfirmMessage/ConfirmeMessage';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -45,11 +47,13 @@ function App() {
 
              <Route exact path="/cart" component={Cart}/>
         
+             <Route exact path="/confirm" component={ConfirmeMessage}/>
+          
            </Switch>
     
-           </Router>
+      </Router>
      
-
+      <Footer/>
     
            </AmountState>  
         

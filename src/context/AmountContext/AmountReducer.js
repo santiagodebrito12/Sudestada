@@ -4,10 +4,10 @@ export const  AmountReducer = (state,action)=>{
 
         switch(type){
             case 'INCREMENT_AMOUNT':
-                return state += payload;
+                return state += payload*1;
 
             case 'DECREMENT_AMOUNT':
-                return state -= payload;
+                return state -= payload*1;
 
             case 'RESET_AMOUNT':
                 return state= 0 ;

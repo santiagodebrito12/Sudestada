@@ -44,7 +44,7 @@ const ItemList = ({cantidadSeleccionada,setCantidadSeleccionada}) => {
 
          <div className="contenedor-productos">
       {items.map(item=>{
-       console.log(item);
+      
        return(
           <Card
           key={item.id}
