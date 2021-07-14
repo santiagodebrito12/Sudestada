@@ -1,10 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import { getFirestore } from '../../firebase/conector';
 import Card from '../Item/Item';
-import shortid from 'shortid';
 import './ItemList.css';
 import kite from '../../img/imagen-kite.jpg';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+
 
 
 

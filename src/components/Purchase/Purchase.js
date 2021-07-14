@@ -59,6 +59,8 @@ const Purchase = () => {
       .add(newOrder)
       .then(({ id }) => {
         setLoading(false);
+        setId(id);
+        
         console.log('operacion creada con exito');
         
       })

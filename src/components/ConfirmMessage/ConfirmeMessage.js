@@ -6,14 +6,16 @@ import './ConfirmMessage.css';
 const ConfirmeMessage = () => {
     
     const [loading, setloading] = useState(true);
-    const { id } = useContext(AmountContext);
+    const {id} = useContext(AmountContext);
 
 
     useEffect(() => {
      
         setTimeout(() => {
-         setloading(false)  
-       }, 3000);
+    
+            setloading(false)  
+            console.log(id);
+        }, 3000);
     }, [])
   
     return (
