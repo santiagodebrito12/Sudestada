@@ -10,7 +10,7 @@ import firebase from 'firebase';
 
 const Purchase = () => {
     const {amount,setId}=useContext(AmountContext);
-    const{Cart,setclientInformation}=useContext(CartContext);
+    const{Cart,setclientInformation,clearCart}=useContext(CartContext);
     const [loading, setLoading] = useState(false);
     
 
@@ -62,6 +62,9 @@ const Purchase = () => {
         setId(id);
         
         console.log('operacion creada con exito');
+        setTimeout(() => {
+          clearCart();
+        }, 1000);
         
       })
       .catch(error => {
@@ -86,12 +89,12 @@ const Purchase = () => {
             <input type="email" placeholder="Ingrese su Correo Electronico" className="w-100" name="email"  onChange={handleChange}/>
            
             <label>Telefono</label>
-            <input type="text" placeholder="Ingrese su Telefono" className="w-100" name="phone"  onChange={handleChange}/>
+            <input type="number" placeholder="Ingrese su Telefono" className="w-100" name="phone"  onChange={handleChange}/>
             
             <Link className="button button-primary d-block m-auto" to="/confirm" onClick={()=>{
           
                 saveOrder();
-              
+
               
               
             }}>Finalizar Compra</Link>

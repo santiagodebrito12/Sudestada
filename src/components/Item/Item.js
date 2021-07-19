@@ -11,7 +11,8 @@ import './Item.css';
 
 
 
-const Card = ({producto,kite,key}) => {
+
+const Card = ({producto,img}) => {
     
     const [cantidad , SetCantidad]=useState(0);
     const [finalizarCompra,setFinalizarCompra] = useState(false);
@@ -22,13 +23,16 @@ const Card = ({producto,kite,key}) => {
     
     const total = cantidad * producto.precio;
     
+    
 
-
+   
     return ( 
           
             <div className="card">
             
-            <img src={kite} className="card-img-top shadow p-3 mb-5 bg-body rounded" alt="foto-kite"></img>
+            <img src={img} 
+            className="card-img-top shadow p-3 mb-5 bg-body rounded" 
+            alt="foto-kite"></img>
             <div className="card-body descripcion">
                 <p className="card-title"> {producto.nombre} </p>
                 <p className="card-text">${producto.precio}</p>
