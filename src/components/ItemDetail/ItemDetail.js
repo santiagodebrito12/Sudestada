@@ -9,6 +9,7 @@ import './ItemDetail.css';
 
 
 const ItemDetail = () => {
+  
    const{productoSeleccionado}=useContext(SudContext);
    const [mostrarProducto, setMostrarProducto] = useState([]);
    const {id} = productoSeleccionado;
@@ -34,20 +35,28 @@ const ItemDetail = () => {
     console.log(mostrarProducto)
 
     return (
-        <div className="contenedor-detail">
+        <div 
+        className="contenedor-detail">
         
         {mostrarProducto.length>0
         
         
         ? mostrarProducto.map(producto=>{
             return(
-                <div key={producto.id}>
+                <div 
+                key={producto.id}>
                        <h2 className="titulo-detail">{producto.nombre }</h2>
            
-                <div className="contenedor-img">
-                   <img src={Kite} className="img-detail"/>
+                <div
+                 className="contenedor-img">
+                   <img 
+                   src={Kite} 
+                   className="img-detail"
+                   alt="imagen-kite"/>
+               
                 </div>
-                    <div className="contenedor-info p-5">
+                    <div
+                     className="contenedor-info p-5">
                        <p>Descripcion: {producto.descripcion}</p>
                        <p>Industria : {producto.industria }</p>
                         <p>Precio : {producto.precio}</p>
@@ -61,7 +70,7 @@ const ItemDetail = () => {
     
     
     
-        :<Spinner/>}
+        :    <Spinner/>}
         
     
       </div>

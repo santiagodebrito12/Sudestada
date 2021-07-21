@@ -12,29 +12,72 @@ const NavBar = () => {
                    
          <div className="container-fluid">
             
-         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
+         <button 
+          className="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+          
+              <span className="navbar-toggler-icon"></span>
+         
          </button>
          
-                <div className="collapse navbar-collapse" id="navbarNav">
-                  <ul className="navbar-nav ml-auto">
+                <div 
+                className="collapse navbar-collapse" 
+                id="navbarNav">
+                  
+                  <ul className="navbar-nav mt-4 p-5">
+                   
                     <li className="nav-item">
-                      <NavLink exact activeClassName="active" className="nav-link" aria-current="page" to="/">Home</NavLink>
+                   
+                      <NavLink 
+                        exact activeClassName="active" 
+                        className="nav-link" 
+                        aria-current="page" 
+                        to="/">Home</NavLink>
+                   
                     </li>
+                   
                     <li className="nav-item">
-                      <NavLink exact activeClassName="active" className="nav-link" to="/">KiteSurf</NavLink>
+                   
+                      <NavLink    
+                      exact activeClassName="active" 
+                      className="nav-link" 
+                      to="/">KiteSurf</NavLink>
+                   
                     </li>
+                   
                     <li className="nav-item">
-                      <NavLink exact activeClassName="active" className="nav-link"  to="#">Surf</NavLink>
+                   
+                      <NavLink 
+                       exact activeClassName="active" 
+                       className="nav-link"  
+                       to="#">Surf</NavLink>
+                   
                     </li>
+                   
                     <li className="nav-item">
-                      <NavLink exact activeClassName="active" className="nav-link"  to="#"><CartWidget/></NavLink>
+                   
+                      <NavLink 
+                       exact activeClassName="active" 
+                       className="nav-link"  
+                       to="#"><CartWidget/></NavLink>
+                   
                     </li>
                     </ul>
                 </div>
 
            <div className="contenedor-logo">
-              <p className="logo"><Link className="logo-link" to="/">SUDESTADA</Link></p>
+          
+              <p className="logo">
+                <Link 
+                 className="logo-link" 
+                 to="/">SUDESTADA</Link>
+              </p>
+          
            </div>
            
            </div>

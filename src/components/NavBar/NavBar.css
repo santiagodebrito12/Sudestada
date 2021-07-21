@@ -23,6 +23,10 @@
     font-family: 'Pattaya', sans-serif;
     text-decoration: none;
   }
+  .img-logo{
+    width: 80px;
+    height: 80px;
+  }
 }
 @media(min-width:1024px){
   .navbar{
@@ -39,14 +43,18 @@
     margin: 2% 5%;
   }
   .logo{
-    font-size: 4rem;
+    font-size: 3rem;
     margin: auto;
   }
   .logo-link{
     color:#eac77d;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: auto;
     font-family: 'Pattaya', sans-serif;
     text-decoration: none;
+  }
+  .img-logo{
+    width: 60px;
+    height: 60px;
   }
 }

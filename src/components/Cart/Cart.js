@@ -1,16 +1,16 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext} from 'react'
 import CartContext from '../../context/CartContext/CartContext';
 import './Cart.css';
 import Kite from '../../img/imagen-kite.jpg';
 import AmountContext from '../../context/AmountContext/AmountContext';
-import { Link } from 'react-router-dom';
+
 import Purchase from '../Purchase/Purchase';
 
 const Cart = () => {
 
     const {Cart,deleteItem,clearCart} = useContext(CartContext)
     const {amount,decrementAmount,resetAmount}=useContext(AmountContext);
-    // const carrito = JSON.parse(localStorage.getItem('carrito'));
+    
   
     
   
@@ -49,11 +49,14 @@ const Cart = () => {
             
             
             :<p className="text-center ">No hay productos en el carrito</p>}
+          
             <button onClick={()=>{
                 clearCart();
                 resetAmount();
             }} className="button-primary w-50 d-block m-auto">  Limpiar Carrito </button>
-               <p className="amount" className="text-center mt-3">Total a pagar: $ {amount}</p>
+               
+               <p  className="amount text-center mt-3">Total a pagar: $ {amount}</p>
+            
             </div>
         
          

@@ -35,7 +35,7 @@ const Purchase = () => {
      
 
         setclientInformation(inputValue);
-        // saveOrder();
+        
     }
 
     
@@ -76,31 +76,63 @@ const Purchase = () => {
     return (
        
         <div className="container mt-5">
+            
             <h2 className="text-center">Completa tus datos para finalizar la Compra</h2>
+            
             <div className="row">
 
            
             <div className="col-8 m-auto">
-            <form type="submit" onSubmit={handleSubmit} className="mt-5">
+            
+            <form 
+             type="submit" 
+             onSubmit={handleSubmit} 
+             className="mt-5">
+            
             <label>Nombre Completo</label>
-            <input type="text" placeholder="Ingrese su Nombre Completo" className="w-100" name="name" onChange={handleChange}/>
+            
+            <input 
+              type="text" 
+              placeholder="Ingrese su Nombre Completo" 
+              className="w-100" 
+              name="name" 
+              onChange={handleChange}/>
            
             <label>Correo Electronico</label>
-            <input type="email" placeholder="Ingrese su Correo Electronico" className="w-100" name="email"  onChange={handleChange}/>
+            
+            <input 
+              type="email" 
+              placeholder="Ingrese su Correo Electronico" 
+              className="w-100" 
+              name="email"  
+              onChange={handleChange}/>
            
             <label>Telefono</label>
-            <input type="number" placeholder="Ingrese su Telefono" className="w-100" name="phone"  onChange={handleChange}/>
             
-            <Link className="button button-primary d-block m-auto" to="/confirm" onClick={()=>{
+            <input 
+              type="number" 
+              placeholder="Ingrese su Telefono" 
+              className="w-100" 
+              name="phone"  
+              onChange={handleChange}/>
+            
+            <Link 
+              className="button button-primary d-block m-auto" 
+              to="/confirm" 
+              onClick={()=>{
           
                 saveOrder();
 
               
               
             }}>Finalizar Compra</Link>
+            
             </form>
+            
              </div>
+            
             </div>
+            
             <div/>
       
         </div>

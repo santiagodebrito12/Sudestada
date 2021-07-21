@@ -1,12 +1,11 @@
-import React,{useState,useEffect} from 'react'
-import Media from 'react-media';
+import React from 'react'
+
 import './Footer.css';
 
 
 const Footer = () => {
-    const [mobile,setMobile]=useState(false);
     
-    
+
     return (
         <>
         <footer className="bg-dark">

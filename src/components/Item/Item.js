@@ -30,9 +30,11 @@ const Card = ({producto,img}) => {
           
             <div className="card">
             
-            <img src={img} 
+            <img 
+            src={img} 
             className="card-img-top shadow p-3 mb-5 bg-body rounded" 
             alt="foto-kite"></img>
+            
             <div className="card-body descripcion">
                 <p className="card-title"> {producto.nombre} </p>
                 <p className="card-text">${producto.precio}</p>
@@ -45,10 +47,16 @@ const Card = ({producto,img}) => {
                 />
                 {finalizarCompra 
                
-               ? <Link className="button" to="/cart">Finalizar Compra </Link> 
+               ? <Link 
+                   className="button" 
+                   to="/cart">Finalizar Compra </Link> 
                
-                :  <button className="button button-primary" onClick={()=>{
-                    if(cantidad !== 0){ 
+                :  
+                   <button 
+                    className="button button-primary" 
+                    onClick={()=>{
+                   
+                        if(cantidad !== 0){ 
                      
                      
                      addItem({
@@ -69,7 +77,8 @@ const Card = ({producto,img}) => {
                  }>Agregar al carrito</button>}
                
                 
-                <Link to="/item/:id"
+                <Link 
+                to="/item/:id"
                 onClick={(e)=>{
                     setProductoSeleccionado(producto)
                

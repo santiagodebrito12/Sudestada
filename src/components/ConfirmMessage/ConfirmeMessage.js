@@ -23,8 +23,13 @@ const ConfirmeMessage = () => {
         {loading ? <Spinner/> : 
         
         <div className="contenedor-menssage">
+      
         <p className="text-center confirm-message"> ¡La compra se realizo exitosamente ! Su numero de seguimientos es {id} </p>
-        <Link to="/" className="text-center">Volver a pagina de inicio </Link>
+      
+        <Link 
+        to="/" 
+        className="text-center">Volver a pagina de inicio </Link>
+      
         </div>
         }
        

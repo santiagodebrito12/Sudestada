@@ -1,7 +1,4 @@
-import React,{useState,useContext,useReducer} from 'react';
-import SudContext from '../../context/CartContext/CartContext';
-import SudReducer from '../../context/SudContext/SudestadaReducer';
-
+import React from 'react';
 import './ItemCount.css';
 
 
@@ -12,7 +9,9 @@ const ItemCount = ({ cantidad , SetCantidad, stock}) => {
       <>
         <div className="contenedor-aumentador">
         
-          <button className="button" onClick={()=>{
+          <button 
+          className="button" 
+          onClick={()=>{
             if(cantidad>0){
              SetCantidad(cantidad - 1)
                
@@ -21,7 +20,9 @@ const ItemCount = ({ cantidad , SetCantidad, stock}) => {
  
             <p>{cantidad}</p>
           
-          <button className="button" onClick={()=>{
+          <button 
+          className="button" 
+          onClick={()=>{
             if(cantidad<stock){
               SetCantidad( cantidad + 1)
             }

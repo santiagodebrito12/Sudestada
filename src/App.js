@@ -39,15 +39,25 @@ function App() {
               
               <Switch>
 
-              <Route  exact path='/' component={ItemListContainer}/>
+             <Route 
+                 exact path='/' 
+                 component={ItemListContainer}/>
      
-             <Route exact path='/category/:id' component={ItemDetailContainer}/>
+             <Route 
+                 exact path='/category/:id' 
+                 component={ItemDetailContainer}/>
     
-             <Route  path="/item/:id" component={ItemDetailContainer}/>
+             <Route  
+                 path="/item/:id" 
+                 component={ItemDetailContainer}/>
 
-             <Route exact path="/cart" component={Cart}/>
+             <Route 
+                 exact path="/cart" 
+                 component={Cart}/>
         
-             <Route exact path="/confirm" component={ConfirmeMessage}/>
+             <Route 
+                 exact path="/confirm" 
+                 component={ConfirmeMessage}/>
           
            </Switch>
     
