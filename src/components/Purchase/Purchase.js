@@ -22,7 +22,8 @@ const Purchase = () => {
 
 
     const handleChange = e =>{
-        setInputValue({
+       
+      setInputValue({
             ...inputValue,
             [e.target.name]:e.target.value,
         })
@@ -30,10 +31,9 @@ const Purchase = () => {
     }
 
     const handleSubmit = e =>{
+     
         e.preventDefault();
         
-     
-
         setclientInformation(inputValue);
         
     }
@@ -42,7 +42,7 @@ const Purchase = () => {
     
    const saveOrder = () => {
     setLoading(true);
-    console.log('ininiciando operacion....');
+    
     const db = getFirestore();
     const order = db.collection('orders');
     const newOrder = {
@@ -61,7 +61,7 @@ const Purchase = () => {
         setLoading(false);
         setId(id);
         
-        console.log('operacion creada con exito');
+        
         setTimeout(() => {
           clearCart();
         }, 1000);
