@@ -1,9 +1,9 @@
 .sk-chase {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     position: relative;
-    top: 120px;
-    left: 45%;
+    top: 40px;
+    
     animation: sk-chase 2.5s infinite linear both;
   }
   

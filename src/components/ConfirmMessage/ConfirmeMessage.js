@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AmountContext from '../../context/AmountContext/AmountContext';
 import Spinner from '../../helpers/Spinner/Spinner';
 import './ConfirmMessage.css';
+
 const ConfirmeMessage = () => {
     
     const [loading, setloading] = useState(true);
@@ -20,6 +21,7 @@ const ConfirmeMessage = () => {
   
     return (
         <>
+        <div className="seccion-mensaje ">
         {loading ? <Spinner/> : 
         
         <div className="contenedor-menssage">
@@ -28,10 +30,12 @@ const ConfirmeMessage = () => {
       
         <Link 
         to="/" 
-        className="text-center">Volver a pagina de inicio </Link>
+        className="link ">Volver a pagina de inicio </Link>
       
         </div>
+
         }
+        </div>
        
        </>
     )

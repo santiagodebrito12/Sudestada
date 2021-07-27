@@ -44,8 +44,9 @@ const ItemDetail = () => {
         ? mostrarProducto.map(producto=>{
             return(
                 <div 
-                key={producto.id}>
-                       <h2 className="titulo-detail">{producto.nombre }</h2>
+                key={producto.id} className="mt-5">
+                
+                <h2 className="titulo-detail">{producto.nombre }</h2>
            
                 <div
                  className="contenedor-img">
@@ -55,12 +56,14 @@ const ItemDetail = () => {
                    alt="imagen-kite"/>
                
                 </div>
-                    <div
-                     className="contenedor-info p-5">
-                       <p>Descripcion: {producto.descripcion}</p>
-                       <p>Industria : {producto.industria }</p>
-                        <p>Precio : {producto.precio}</p>
+                    <div className="mt-3 w-75 m-3">
+                     
+                       <p><span className="consigna">Descripcion :</span> {producto.descripcion}</p>
+                       <p><span className="consigna">Industria : </span> {producto.industria }</p>
+                       <p><span className="consigna">Precio : </span> {producto.precio} </p>
                    </div>
+
+                   
                    </div>   
 
                

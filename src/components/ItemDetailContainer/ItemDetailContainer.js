@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
-
+import './ItemDetailContainer.css';
 
 
 
@@ -11,11 +11,11 @@ const ItemDetailContainer = () => {
     return (
            
         
-         <div>
-         
+         <div className="contenedor-seccion-detail">
+          
          <Link
           to="/" 
-          className="m-3 p-5"
+          className="link"
           > Volver al home </Link>
          
          <ItemDetail /> 
